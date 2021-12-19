@@ -17,6 +17,8 @@ function renderTodoItemList(todoItems,finishedItems) {
 //    for (let i=0; i < paneE1.childNodes.length; i++){
 //        paneE1.childNodes[i].remove;
 //    }
+    
+
 
 
     for (let i=0; i < todoItems.length ; i++ ){
@@ -40,6 +42,29 @@ function renderTodoItemList(todoItems,finishedItems) {
 
         let titleE1 = document.createElement("div");
         titleE1.className = "title";
+        titleE1.contentEditable="true"
+        titleE1.addEventListener("input",(e)=>{
+            todoItems[i].title = titleE1.innerText
+
+
+            console.log(todoItems)
+            
+        })
+
+
+//不可以有bug
+        //titleE1.onclick = function() {
+          //  let changeE1 = prompt("please input your new content","");
+            //titleE1.innerText=changeE1;
+            //todoItems[i]=changeE1.value;
+        //    todoItems[i].title = changeE1.value,
+        //    todoItems[i].isFinished = false,
+        //    todoItems[i].isImportance = false,
+        //    console.log(i);
+        //}
+
+        
+    
 
         let importanceE1 = document.createElement("div");
         importanceE1.className = "important-flag";
@@ -164,7 +189,7 @@ function renderInputPane(todoItems,finishedItems){
 
 
         
-        console.log("add a item :",inputE1.value);
+        //console.log("add a item :",inputE1.value);
         //console.log(todoItems);
         renderTodoItemList(todoItems,finishedItems);
     });
@@ -182,8 +207,6 @@ function renderInputPane(todoItems,finishedItems){
     // let btnE1 = document.querySelector("#todolist #add-btn");
 
 }
-
-
 
 
 
