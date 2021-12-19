@@ -4,6 +4,11 @@ body {
     justify-content: center;
 }
 
+h2{
+    color: #625f5f;
+
+}
+
 .todolist-panel {
     width: 20em;
     min-height: 25em;
@@ -43,8 +48,7 @@ body {
 }
 
 .important-flag.open{
-    color: red
-    ;
+    color: red;
 
 }
 
