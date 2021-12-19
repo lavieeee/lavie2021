@@ -5,6 +5,10 @@ let todoItems = [];
 
 let finishedItems = [];
 
+let importantItems=[];
+
+let unimportantItems=[]
+
 function renderTodoItemList(todoItems,finishedItems) {
 
     let paneE1 = document.querySelector("#todolist > .list-pane");
@@ -51,7 +55,25 @@ function renderTodoItemList(todoItems,finishedItems) {
                 item.isImportance = false;
             } else{
                 item.isImportance = true;
+
             }
+//            for(let i=0; i < todoItems.length ; i++){
+//                let item1 = todoItems[i];
+//                if(item1.isImportance){
+//                    importantItems.push({
+//                        title: item1.value,
+//                        isFinished: false,
+//                        isImportance: true,                    
+//                    })
+//                }else{
+//                    unimportantItems.push({
+//                        title: item1.value,
+//                        isFinished: false,
+//                        isImportance: false,
+//                    
+//                    })
+//                }
+//            }
 
             renderTodoItemList(todoItems,finishedItems);
         })
@@ -107,6 +129,7 @@ function renderFinishedItemList(todoItems,finishedItems) {
         if(item.isImportance){
             importanceE1.classList.add("open")
         }
+       
         
 
 
@@ -134,7 +157,12 @@ function renderInputPane(todoItems,finishedItems){
             title: inputE1.value,
             isFinished: false,
             isImportance: false,
+        
         })
+        inputE1.value="";
+
+
+
         
         console.log("add a item :",inputE1.value);
         //console.log(todoItems);
@@ -154,6 +182,7 @@ function renderInputPane(todoItems,finishedItems){
     // let btnE1 = document.querySelector("#todolist #add-btn");
 
 }
+
 
 
 
